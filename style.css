@@ -1,0 +1,188 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('path_to_your_default_image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    transition: transform 0.3s, background-color 0.3s;
+    font-weight: 700; /* Using the bold (700) weight for headings and buttons */
+}
+button:hover {
+    transform: scale(1.05);  /* Enlarges the button slightly */
+    background-color: #007BFF;  /* A shade of blue as an example. Adjust color as needed */
+}
+
+#cityInput {
+    flex-grow: 1;  /* Allows the input to take up available space */
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;  /* Rounded corners on the left side */
+    padding: 10px;
+    margin: 0;  /* Remove any default margins */
+}
+
+.clear-icon {
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-left: none;  /* Remove left border to connect with the input */
+    border-radius: 0 4px 4px 0;  /* Rounded corners on the right side */
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    transition: background-color 0.3s;
+}
+
+.clear-icon:hover {
+    background-color: #e0e0e0;
+}
+
+.weather-container {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    opacity: 1;
+    transform: translateY(0); /* Initial position */
+    transition: opacity 0.5s, transform 0.5s;
+    flex-wrap: wrap;  /* Allow items to wrap onto the next line */
+
+}
+.weather-container.slide-fade-out {
+    opacity: 0;
+    transform: translateY(-20px); /* Slide it up slightly as it fades */
+}
+.search-bar {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+}
+
+.card {
+    background: #f7f9fc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin: 10px 0;
+    flex: 1;
+}
+
+#mainWeather {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Temperature-based colors */
+.cold { background-color: #A2B9C3; } /* Cold temperature: Light blue shade */
+.moderate { background-color: #FFD479; } /* Moderate temperature: Light orange shade */
+.warm { background-color: #FF6B35; } /* Warm temperature: Strong orange/red shade */
+
+/* Condition-based colors */
+.rainy { background-color: #5A6E7F; } /* Rainy condition: Bluish-gray shade */
+.sunny { background-color: #FFF49C; } /* Sunny condition: Bright yellow */
+
+p span {
+    vertical-align: middle;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    display: none; /* Hidden by default */
+    margin: 0 auto; /* Center the spinner */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    appearance: none;  /* Removes default styling on some browsers */
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+select:hover {
+    border-color: #007BFF;  /* A shade of blue as an example. Adjust color as needed */
+}
+
+input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+input:hover {
+    border-color: #007BFF;
+}
+
+.temp-gauge {
+    height: 200px;
+    width: 40px;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.temp-fill {
+    background-color: #f44336; /* Red color for temperature */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+}
+
+
+/* For screens smaller than 768px (usually tablets and mobile) */
+@media (max-width: 767px) {
+    .weather-container {
+        padding: 10px;
+    }
+
+    .data-container {
+        flex-direction: column;  /* Stack the children vertically */
+    }
+
+    .temp-section, .wind-section {
+        margin: 10px 0;  /* Adjust margin for vertical stacking */
+        text-align: center;  /* Center-align text for a neater look */
+    }
+
+    /* Assuming you have a search bar, adjust its layout for smaller screens */
+    .search-bar {
+        flex-direction: column;
+    }
+
+    input, select, button {
+        margin-bottom: 10px;  /* Add some space between the elements */
+        width: 100%;  /* Make them full-width */
+    }
+}

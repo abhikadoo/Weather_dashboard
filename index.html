@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="weather-container">
+        <div id="loader" class="spinner"></div>
+        <div class="search-bar">
+            <input id="cityInput" placeholder="Type a city...">
+            <button class="clear-icon" onclick="clearInput()">×</button>
+            <button onclick="getWeather()">Search</button>
+        </div>
+    
+        <div class="card" id="mainWeather">
+            <i id="weatherIcon" class="wi"></i>
+            <h2 id="cityName"></h2>
+            <p><span>🌡️</span> <span id="temperature"></span></p>
+            <p><span id="descriptionIcon">🌤️</span> <span id="description"></span></p>
+        </div>
+        
+        <div class="card" id="humidityCard">
+            <p><span>💧</span> <span id="humidity"></span></p>
+        </div>
+        
+        <div class="card" id="windCard">
+            <p><span>🌬️</span> <span id="windSpeed"></span></p>
+        </div>
+        
+        <div class="card" id="pressureCard">
+            <p><span>📌</span> <span id="pressure"></span></p>
+        </div>
+        
+        <div class="card" id="sunCard">
+            <p><span>☀️</span> <span id="sunrise"></span></p>
+            <p><span>🌅</span> <span id="sunset"></span></p>
+        </div>
+        
+        
+    </div>
+    
+
+<script src="script.js"></script>
+</body>
+</html>
