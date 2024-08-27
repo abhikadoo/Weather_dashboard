@@ -1,0 +1,22 @@
+{
+  "name": "weather_dashboard",
+  "version": "1.0.0",
+  "description": "A simple weather dashboard application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"No tests available for this application\\\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhikadoo/Weather_dashboard.git"
+  },
+  "keywords": [
+    "["
+  ],
+  "author": "\"weather\",",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhikadoo/Weather_dashboard/issues"
+  },
+  "homepage": "https://github.com/abhikadoo/Weather_dashboard#readme"
+}
